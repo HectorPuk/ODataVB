@@ -1,4 +1,8 @@
-﻿Imports WindowsApplication1.Pisco2
+﻿Imports WindowsApplication1.ServiceReference1
+Imports System.Data.Services.Client
+Imports System
+Imports System.Net
+Imports System.Security.Cryptography.X509Certificates
 
 Public Class Form1
 
@@ -6,20 +10,45 @@ Public Class Form1
 
         Dim northwindUri As Uri = New Uri("http://192.168.1.26:50000/b1s/v1/")
 
-        Dim Kiko As Pisco2.SAPB1.ServiceLayer = New Pisco2.SAPB1.ServiceLayer(northwindUri)
+        Dim context As SAPB1.ServiceLayer = New SAPB1.ServiceLayer(northwindUri)
 
-        Kiko.Format.UseJson()
+        AddHandler context.SendingRequest, AddressOf OnSendingRequest
 
-        Dim context As SAPB1.BusinessPartner = New SAPB1.BusinessPartner
+        'AddHandler context2.SendingRequest, AddressOf OnSendingRequest2
 
+        'Dim factura As SAPB1.Document
+        Dim j As Integer = 1
 
-        'v4lk1m14()
+        Try
 
+            j = context.Orders.Count()
+            j = context.Invoices.Count()
+            j = context.DeliveryNotes.Count()
+            j = context.PurchaseInvoices.Count()
 
-        context.CardCode = 22
-        context.CardName = "Jose Ingenieria S.A."
+        Catch ex As Exception
 
+            Dim i As Integer = 1
 
+        End Try
 
+        Dim t As Integer = 1
+
+        'Asi se supone que deberia agregar una factura.
+
+        'context.AddToInvoices(factura)
+
+        'Asi se supone que deberia obtener una order.
+
+        'context.Orders.Where(factura, True)
+
+    End Sub
+    Private Shared Sub OnSendingRequest(ByVal sender As Object, ByVal e As SendingRequestEventArgs)
+        ' Add an Authorization header that contains an OAuth WRAP access token to the request.
+        e.RequestHeaders.Add("Authorization", "Basic eyJDb21wYW55REIiOiAiQVJfU1RBUlBPU19WS19TV0VFVCIsICJVc2VyTmFtZSI6ICJtYW5hZ2VyIn06dmFsa2ltaWEzMw==")
+    End Sub
+    Private Shared Sub OnSendingRequest2(ByVal sender As Object, ByVal e As SendingRequestEventArgs)
+        ' Add an Authorization header that contains an OAuth WRAP access token to the request.
+        e.RequestHeaders.Add("Authorization", "Basic eyJDb21wYW55REIiOiAiQVJfU1RBUlBPU19WS19TV0VFVCIsICJVc2VyTmFtZSI6ICJtYW5hZ2VyIn06dmFsa2ltaWEzMw==")
     End Sub
 End Class
