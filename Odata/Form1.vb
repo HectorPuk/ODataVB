@@ -8,11 +8,14 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
-        Dim northwindUri As Uri = New Uri("http://192.168.1.26:50000/b1s/v1/")
+        'Dim northwindUri As Uri = New Uri("http://192.168.1.26:50000/b1s/v1/")
+        Dim northwindUri As Uri = New Uri("https://192.168.1.26:50000/b1s/v1/")
 
         Dim context As SAPB1.ServiceLayer = New SAPB1.ServiceLayer(northwindUri)
 
         AddHandler context.SendingRequest, AddressOf OnSendingRequest
+
+        ServicePointManager.ServerCertificateValidationCallback = AddressOf AcceptAllCertifications
 
         'AddHandler context2.SendingRequest, AddressOf OnSendingRequest2
 
@@ -51,4 +54,8 @@ Public Class Form1
         ' Add an Authorization header that contains an OAuth WRAP access token to the request.
         e.RequestHeaders.Add("Authorization", "Basic eyJDb21wYW55REIiOiAiQVJfU1RBUlBPU19WS19TV0VFVCIsICJVc2VyTmFtZSI6ICJtYW5hZ2VyIn06dmFsa2ltaWEzMw==")
     End Sub
+    Public Function AcceptAllCertifications(ByVal sender As Object, ByVal certification As System.Security.Cryptography.X509Certificates.X509Certificate, ByVal chain As System.Security.Cryptography.X509Certificates.X509Chain, ByVal sslPolicyErrors As System.Net.Security.SslPolicyErrors) As Boolean
+        'Necesario para usar SSL 
+        Return True
+    End Function
 End Class

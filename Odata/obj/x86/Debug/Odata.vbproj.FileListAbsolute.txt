@@ -7,3 +7,12 @@ C:\SweetAddOn\Odata\Odata\bin\Debug\Odata.xml
 C:\SweetAddOn\Odata\Odata\obj\x86\Debug\Odata.exe
 C:\SweetAddOn\Odata\Odata\obj\x86\Debug\Odata.xml
 C:\SweetAddOn\Odata\Odata\obj\x86\Debug\Odata.pdb
+C:\SweetAddOn\OdataVBBasicAuth\Odata\obj\x86\Debug\Odata.exe
+C:\SweetAddOn\OdataVBBasicAuth\Odata\obj\x86\Debug\Odata.xml
+C:\SweetAddOn\OdataVBBasicAuth\Odata\obj\x86\Debug\Odata.pdb
+C:\SweetAddOn\OdataVBBasicAuth\Odata\bin\Debug\Odata.exe
+C:\SweetAddOn\OdataVBBasicAuth\Odata\bin\Debug\Odata.pdb
+C:\SweetAddOn\OdataVBBasicAuth\Odata\bin\Debug\Odata.xml
+C:\SweetAddOn\OdataVBBasicAuth\Odata\obj\x86\Debug\WindowsApplication1.Form1.resources
+C:\SweetAddOn\OdataVBBasicAuth\Odata\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\SweetAddOn\OdataVBBasicAuth\Odata\obj\x86\Debug\Odata.vbproj.GenerateResource.Cache

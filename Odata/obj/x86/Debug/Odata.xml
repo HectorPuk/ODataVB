@@ -6,7 +6,20 @@ Odata
 </name>
 </assembly>
 <members>
-<member name="M:WindowsApplication1.ServiceReference1.SAPB1.ServiceLayer.#ctor(System.Uri)">
+<member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:WindowsApplication1.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:WindowsApplication1.ServiceReference1.SAPB1.ServiceLayer.#ctor(System.Uri)">
 	<summary>
 Initialize a new ServiceLayer object.
 </summary>
@@ -49924,19 +49937,6 @@ There are no comments for Property Code in the schema.
 </member><member name="T:WindowsApplication1.ServiceReference1.SAPB1.UserDefaultGroupParams">
 	<summary>
 There are no comments for ComplexType SAPB1.UserDefaultGroupParams in the schema.
-</summary>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:WindowsApplication1.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
 </member>
 </members>
