@@ -48,11 +48,15 @@ Public Class Form1
     End Sub
     Private Shared Sub OnSendingRequest(ByVal sender As Object, ByVal e As SendingRequestEventArgs)
         ' Add an Authorization header that contains an OAuth WRAP access token to the request.
-        e.RequestHeaders.Add("Authorization", "Basic eyJDb21wYW55REIiOiAiQVJfU1RBUlBPU19WS19TV0VFVCIsICJVc2VyTmFtZSI6ICJtYW5hZ2VyIn06dmFsa2ltaWEzMw==")
+        'e.RequestHeaders.Add("Authorization", "Basic eyJDb21wYW55REIiOiAiQVJfU1RBUlBPU19WS19TV0VFVCIsICJVc2VyTmFtZSI6ICJtYW5hZ2VyIn06dmFsa2ltaWEzMw==")
+        e.RequestHeaders.Add("Authorization", "Basic " + Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes("{""CompanyDB"": ""AR_STARPOS_VK_SWEET"", ""UserName"": ""manager""}:valkimia33")))
+
     End Sub
     Private Shared Sub OnSendingRequest2(ByVal sender As Object, ByVal e As SendingRequestEventArgs)
         ' Add an Authorization header that contains an OAuth WRAP access token to the request.
-        e.RequestHeaders.Add("Authorization", "Basic eyJDb21wYW55REIiOiAiQVJfU1RBUlBPU19WS19TV0VFVCIsICJVc2VyTmFtZSI6ICJtYW5hZ2VyIn06dmFsa2ltaWEzMw==")
+        '{"CompanyDB": "AR_STARPOS_VK_SWEET", "UserName": "manager"}:valkimia33
+        Dim test As String = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes("{""CompanyDB"": ""AR_STARPOS_VK_SWEET"", ""UserName"": ""manager""}:valkimia33"))
+        e.RequestHeaders.Add("Authorization", "Basic " + test)
     End Sub
     Public Function AcceptAllCertifications(ByVal sender As Object, ByVal certification As System.Security.Cryptography.X509Certificates.X509Certificate, ByVal chain As System.Security.Cryptography.X509Certificates.X509Chain, ByVal sslPolicyErrors As System.Net.Security.SslPolicyErrors) As Boolean
         'Necesario para usar SSL 
